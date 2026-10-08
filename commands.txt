@@ -1,0 +1,11 @@
+#InfluxDB
+docker compose -f docker\docker-compose.yml up -d
+
+#Backend
+uvicorn app.main:app --reload
+
+#Frontend
+npm run dev
+
+#To stop and remove the InfluxDB container, but preserve your forensic data because we are not using -v.
+docker compose -f docker\docker-compose.yml down
